@@ -1,0 +1,64 @@
+{
+  "extensionVersion": "1.3.4",
+  "fileName": "/home/piledriven/cpe470/asic-tools/workspace/lab3-piledriven1/tests/tb_dffram/tb_dffram.vcd",
+  "markerTime": null,
+  "altMarkerTime": null,
+  "selectedSignal": {
+    "name": "tb_dffram.DFFRAM.en0",
+    "numberFormat": "hexadecimal",
+    "msb": -1,
+    "lsb": -1
+  },
+  "zoomRatio": 0.031172064112103173,
+  "scrollLeft": 0,
+  "displayedSignals": [
+    {
+      "netlistId": 10,
+      "name": "tb_dffram.DFFRAM.clk",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 11,
+      "name": "tb_dffram.DFFRAM.we0",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 12,
+      "name": "tb_dffram.DFFRAM.en0",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 13,
+      "name": "tb_dffram.DFFRAM.Di0",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 14,
+      "name": "tb_dffram.DFFRAM.Do0",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 15,
+      "name": "tb_dffram.DFFRAM.a0",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    }
+  ]
+}

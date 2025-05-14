@@ -12,7 +12,7 @@ module tb_dffram ();
     // output
     logic [31:0] Do0;
 
-    DFFRAM256x32 DFFRAM(.*);
+    DFFRAM256x32 UUT(.*);
 
     always #5 clk = ~clk;
 

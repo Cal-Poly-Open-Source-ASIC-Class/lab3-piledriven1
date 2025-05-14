@@ -23,16 +23,17 @@
 `default_nettype none
 
 module DFFRAM256x32 #(
-    parameter A_WIDTH = 8,
-    parameter NUM_WORDS = 2 ** A_WIDTH
+    parameter A_WIDTH = 8
 )(
-    input wire clk,
-    input wire [3:0] we0,
-    input wire en0,
-    input wire [31:0] Di0,
-    output reg [31:0] Do0,
-    input wire [(A_WIDTH - 1): 0] a0
+    input logic clk,
+    input logic [3:0] we0,
+    input logic en0,
+    input logic [31:0] Di0,
+    input logic [(A_WIDTH - 1): 0] a0,
+    output logic [31:0] Do0
 );
+    localparam NUM_WORDS = 2 ** A_WIDTH;
+
     reg [31:0] RAM[(NUM_WORDS - 1):0];
 
     always_ff @(posedge clk) begin

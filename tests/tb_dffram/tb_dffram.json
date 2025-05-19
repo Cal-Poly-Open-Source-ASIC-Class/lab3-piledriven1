@@ -4,57 +4,57 @@
   "markerTime": null,
   "altMarkerTime": null,
   "selectedSignal": {
-    "name": "tb_dffram.DFFRAM.en0",
+    "name": "tb_dffram.a0",
     "numberFormat": "hexadecimal",
-    "msb": -1,
-    "lsb": -1
+    "msb": 7,
+    "lsb": 0
   },
-  "zoomRatio": 0.031172064112103173,
+  "zoomRatio": 0.017624169326623817,
   "scrollLeft": 0,
   "displayedSignals": [
     {
-      "netlistId": 10,
-      "name": "tb_dffram.DFFRAM.clk",
+      "netlistId": 2,
+      "name": "tb_dffram.clk",
       "numberFormat": "binary",
       "colorIndex": 0,
       "renderType": "binary",
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 11,
-      "name": "tb_dffram.DFFRAM.we0",
-      "numberFormat": "hexadecimal",
-      "colorIndex": 0,
-      "renderType": "multiBit",
-      "valueLinkCommand": ""
-    },
-    {
-      "netlistId": 12,
-      "name": "tb_dffram.DFFRAM.en0",
+      "netlistId": 3,
+      "name": "tb_dffram.en0",
       "numberFormat": "binary",
       "colorIndex": 0,
       "renderType": "binary",
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 13,
-      "name": "tb_dffram.DFFRAM.Di0",
+      "netlistId": 4,
+      "name": "tb_dffram.we0",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,
       "renderType": "multiBit",
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 14,
-      "name": "tb_dffram.DFFRAM.Do0",
+      "netlistId": 5,
+      "name": "tb_dffram.Di0",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,
       "renderType": "multiBit",
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 15,
-      "name": "tb_dffram.DFFRAM.a0",
+      "netlistId": 7,
+      "name": "tb_dffram.Do0",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 6,
+      "name": "tb_dffram.a0",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,
       "renderType": "multiBit",

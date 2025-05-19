@@ -1,9 +1,8 @@
 `timescale 1ns / 1ps
 
-module tb_dffram ();
+module tb_dffram();
     // parameters
     localparam A_WIDTH = 8;
-    localparam NUM_WORDS = 2 ** A_WIDTH;
     // inputs
     logic clk, en0;
     logic [3:0] we0;
@@ -18,9 +17,10 @@ module tb_dffram ();
 
     initial begin
         $dumpfile("tb_dffram.vcd");
-        $dumpvars(0, "tb_dffram");
+        $dumpvars(0, tb_dffram);
 
         clk = 0;
+        a0 = 0;
         en0 = 0;
         we0 = 0;
         Di0 = 0;

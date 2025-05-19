@@ -5,3 +5,4 @@ runs/
 *log
 *obj_dir
 .vscode/*
+.venv

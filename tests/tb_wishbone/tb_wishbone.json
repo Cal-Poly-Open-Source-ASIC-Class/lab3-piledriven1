@@ -1,0 +1,168 @@
+{
+  "extensionVersion": "1.3.4",
+  "fileName": "/home/piledriven/cpe470/asic-tools/workspace/lab3-piledriven1/tests/tb_wishbone/tb_wishbone.vcd",
+  "markerTime": 25000,
+  "altMarkerTime": null,
+  "selectedSignal": {
+    "name": "tb_wishbone.UUT.pB_wb_data_i",
+    "numberFormat": "hexadecimal",
+    "msb": 31,
+    "lsb": 0
+  },
+  "zoomRatio": 0.01118125608677965,
+  "scrollLeft": 0,
+  "displayedSignals": [
+    {
+      "netlistId": 20,
+      "name": "tb_wishbone.UUT.clk",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 29,
+      "name": "tb_wishbone.UUT.rst",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 24,
+      "name": "tb_wishbone.UUT.pA_wb_stb_i",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 21,
+      "name": "tb_wishbone.UUT.pA_wb_addr_i",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 23,
+      "name": "tb_wishbone.UUT.pA_wb_sel_i",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 22,
+      "name": "tb_wishbone.UUT.pA_wb_data_i",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 36,
+      "name": "tb_wishbone.UUT.pA_wb_data_o",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 4,
+      "name": "tb_wishbone.pA_wb_stall_o",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 28,
+      "name": "tb_wishbone.UUT.pB_wb_stb_i",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 25,
+      "name": "tb_wishbone.UUT.pB_wb_addr_i",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 27,
+      "name": "tb_wishbone.UUT.pB_wb_sel_i",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 26,
+      "name": "tb_wishbone.UUT.pB_wb_data_i",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 40,
+      "name": "tb_wishbone.UUT.pB_wb_data_o",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 0,
+      "name": "tb_wishbone.pB_wb_stall_o",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 52,
+      "name": "tb_wishbone.UUT.RAM0.Di0",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 59,
+      "name": "tb_wishbone.UUT.RAM0.Do0",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 60,
+      "name": "tb_wishbone.UUT.RAM1.Di0",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 67,
+      "name": "tb_wishbone.UUT.RAM1.Do0",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "renderType": "multiBit",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 51,
+      "name": "tb_wishbone.UUT.turn",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    }
+  ]
+}

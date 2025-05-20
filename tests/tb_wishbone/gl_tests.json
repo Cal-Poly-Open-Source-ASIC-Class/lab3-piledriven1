@@ -9,7 +9,7 @@
     "msb": 31,
     "lsb": 0
   },
-  "zoomRatio": 0.01237221832675204,
+  "zoomRatio": 0.0023600595558653024,
   "scrollLeft": 0,
   "displayedSignals": [
     {
@@ -87,7 +87,7 @@
     {
       "netlistId": 18,
       "name": "tb_wishbone.pB_wb_we_i",
-      "numberFormat": "hexadecimal",
+      "numberFormat": "binary",
       "colorIndex": 0,
       "renderType": "multiBit",
       "valueLinkCommand": ""

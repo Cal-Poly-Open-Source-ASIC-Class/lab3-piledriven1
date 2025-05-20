@@ -85,6 +85,7 @@ tests/%: FORCE
 itests: 
 	@ICARUS=1 make tests
 
+# Added line to copy macros/dffram256x32/hdl/gl to gl
 gl_tests:
 	@mkdir -p gl
 	@cp runs/recent/final/pnl/* gl/

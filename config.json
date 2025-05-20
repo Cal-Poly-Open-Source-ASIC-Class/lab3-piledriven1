@@ -46,7 +46,9 @@
                 "max*": "dir::macros/dffram256x32/timing/lib/max/DFFRAM256x32.Slowest.lib",
                 "min*": "dir::macros/dffram256x32/timing/lib/max/DFFRAM256x32.Slowest.lib",
                 "nom*": "dir::macros/dffram256x32/timing/lib/max/DFFRAM256x32.Slowest.lib"
-            }
+            },
+            "nl": ["dir::macros/dffram256x32/hdl/gl/DFFRAM256x32.v"],
+            "pnl": ["dir::macros/dffram256x32/hdl/gl/DFFRAM256x32.v"]
         }
     },
     "FP_PDN_VWIDTH": 3.1,

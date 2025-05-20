@@ -133,18 +133,18 @@ module wishbone #(
     end
 
     // instantiate the RAM modules
-    DFFRAM256x32 #(A_WIDTH) RAM0(.*,
-                                .en0(ram0_wb_en0_i),
-                                .we0(ram0_wb_we0_i),
-                                .a0(ram0_wb_a0_i[A_WIDTH - 1:0]),
+    DFFRAM256x32 RAM0(.CLK(clk),
+                                .EN0(ram0_wb_en0_i),
+                                .WE0(ram0_wb_we0_i),
+                                .A0(ram0_wb_a0_i[A_WIDTH - 1:0]),
                                 .Di0(ram0_wb_Di0_i),
                                 .Do0(ram0_wb_Do0_o)
                                 );
 
-    DFFRAM256x32 #(A_WIDTH) RAM1(.*,
-                                .en0(ram1_wb_en0_i),
-                                .we0(ram1_wb_we0_i),
-                                .a0(ram1_wb_a0_i[A_WIDTH - 1:0]),
+    DFFRAM256x32 RAM1(.CLK(clk),
+                                .EN0(ram1_wb_en0_i),
+                                .WE0(ram1_wb_we0_i),
+                                .A0(ram1_wb_a0_i[A_WIDTH - 1:0]),
                                 .Di0(ram1_wb_Di0_i),
                                 .Do0(ram1_wb_Do0_o)
                                 );

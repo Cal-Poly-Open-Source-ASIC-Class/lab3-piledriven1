@@ -11,13 +11,20 @@ module tb_dffram();
     // output
     logic [31:0] Do0;
 
-    DFFRAM256x32 UUT(.*);
+    `ifdef USE_POWER_PINS
+        wire VPWR;
+        wire VGND;
+        assign VPWR=1;
+        assign VGND=0;
+    `endif
+
+    DFFRAM256x32 UUT(.*, .CLK(clk),.EN0(en0), .WE0(we0), .A0(a0));
 
     always #5 clk = ~clk;
 
     initial begin
         $dumpfile("tb_dffram.vcd");
-        $dumpvars(0, tb_dffram);
+        $dumpvars(2, tb_dffram);
 
         clk = 0;
         a0 = 0;

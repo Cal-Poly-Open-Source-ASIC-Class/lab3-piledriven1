@@ -2,7 +2,7 @@
 
 module tb_wishbone();
     localparam A_WIDTH = 8;
-    localparam CLK_PERIOD = 10;
+    localparam CLK_PERIOD = 45;
 
     logic clk, rst;
     // port A
@@ -13,6 +13,13 @@ module tb_wishbone();
     logic pA_wb_err_o, pA_wb_ack_o, pA_wb_stall_o;
     logic [31:0] pA_wb_data_o;
 
+    `ifdef USE_POWER_PINS
+        wire VPWR;
+        wire VGND;
+        assign VPWR=1;
+        assign VGND=0;
+    `endif
+
     // port B
     logic pB_wb_stb_i;
     logic [A_WIDTH:0] pB_wb_addr_i;
@@ -21,13 +28,13 @@ module tb_wishbone();
     logic pB_wb_err_o, pB_wb_ack_o, pB_wb_stall_o;
     logic [31:0] pB_wb_data_o;
 
-    wishbone #(A_WIDTH) UUT(.*);
+    wishbone UUT(.*);
 
     always #(CLK_PERIOD/2) clk = ~clk;
 
     initial begin
         $dumpfile("tb_wishbone.vcd");
-        $dumpvars(0, tb_wishbone);
+        $dumpvars(2, tb_wishbone);
 
         clk = 0;
         rst = 1;

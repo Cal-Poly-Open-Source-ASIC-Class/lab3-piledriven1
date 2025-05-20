@@ -1,7 +1,7 @@
 INC_DIR := ./include
 SCRIPT_FILE := synth_check.ys
 RTL_SRCS 	:= $(shell find rtl -name '*.sv' -or -name '*.v')
-# GL_SRCS 	:= $(shell find gl -name '*.v')
+GL_SRCS 	:= $(shell find gl -name '*.v')
 
 INCLUDE_DIRS := $(sort $(dir $(shell find . -name '*.svh')))
 RTL_DIRS	 := $(sort $(dir $(RTL_SRCS)))
@@ -91,6 +91,7 @@ gl_tests:
 	@cat scripts/gatelevel.vh gl/*.v > gl/temp
 	@mv -f gl/temp gl/*.v
 	@rm -f gl/temp
+	@cp macros/dffram256x32/hdl/gl/* gl
 	@GL=1 make tests
 
 .PHONY: $(TESTS)

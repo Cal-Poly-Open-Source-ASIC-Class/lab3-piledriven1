@@ -43,18 +43,18 @@
                 "nom*": ["dir::macros/dffram256x32/timing/spef/DFFRAM256x32.nom.spef"]
             },
             "lib": {
-                "max*": "dir::macros/dffram256x32/timing/lib/max/DFFRAM256x32.Slowest.lib",
-                "min*": "dir::macros/dffram256x32/timing/lib/min/DFFRAM256x32.Slowest.lib",
-                "nom*": "dir::macros/dffram256x32/timing/lib/nom/DFFRAM256x32.Slowest.lib"
+                "*": "dir::macros/dffram256x32/timing/lib/max/DFFRAM256x32.Slowest.lib"
             },
             "nl": ["dir::macros/dffram256x32/hdl/gl/DFFRAM256x32.v"],
             "pnl": ["dir::macros/dffram256x32/hdl/gl/DFFRAM256x32.v"]
         }
     },
+
     "PDN_MACRO_CONNECTIONS": [
         "RAM0 VPWR VGND VPWR VGND",
         "RAM1 VPWR VGND VPWR VGND"
     ],
+
     "FP_PDN_VWIDTH": 3.1,
     "FP_PDN_HWIDTH": 3.1,
     "FP_PDN_VSPACING": 15.5,

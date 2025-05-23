@@ -4,6 +4,7 @@
         "dir::rtl/*.sv",
         "dir::rtl/*.v"
     ],
+    "CLOCK_PORT": "clk",
     "PNR_SDC_FILE" :"dir::rtl/*.sdc",
     "SIGNOFF_SDC_FILE" :"dir::rtl/*.sdc",
     "FP_PDN_VOFFSET": 7,

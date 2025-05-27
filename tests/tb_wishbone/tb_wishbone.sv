@@ -32,42 +32,44 @@ module tb_wishbone();
 
     always #(CLK_PERIOD/2) clk = ~clk;
 
-    initial begin
+    always begin
         $dumpfile("tb_wishbone.vcd");
         $dumpvars(2, tb_wishbone);
 
-        clk = 0;
-        rst = 0;
-        pA_wb_stb_i = 0;
-        pB_wb_stb_i = 0;
-        pA_wb_data_i = 0;
-        pB_wb_data_i = 0;
-        pA_wb_we_i = 0;
-        pB_wb_we_i = 0;
+        clk <= 0;
+        rst <= 0;
+        pA_wb_addr_i <= 9'b000000000;
+        pB_wb_addr_i <= 9'b100000000;
+        pA_wb_stb_i <= 0;
+        pB_wb_stb_i <= 0;
+        pA_wb_data_i <= 0;
+        pB_wb_data_i <= 0;
+        pA_wb_we_i <= 0;
+        pB_wb_we_i <= 0;
 
         @(posedge clk);
-        rst = 1;
+        rst <= 1;
 
         @(posedge clk);
-        rst = 0;
-        pA_wb_we_i = 15;
-        pA_wb_addr_i = 9'b000000000;
-        pA_wb_stb_i = 0;
-        pA_wb_data_i = 0;
+        rst <= 0;
+        pA_wb_we_i <= 15;
+        
+        pA_wb_stb_i <= 0;
+        pA_wb_data_i <= 0;
 
-        pB_wb_we_i = 15;
-        pB_wb_addr_i = 9'b100000000;
-        pB_wb_stb_i = 0;
-        pB_wb_data_i = 0;
+        pB_wb_we_i <= 15;
+        
+        pB_wb_stb_i <= 0;
+        pB_wb_data_i <= 0;
 
         #(CLK_PERIOD * 2);
-        rst = 0;
-        pA_wb_stb_i = 1;
-        pB_wb_stb_i = 1;
+        rst <= 0;
+        pA_wb_stb_i <= 1;
+        pB_wb_stb_i <= 1;
 
         @(posedge clk);
-        pA_wb_data_i = 32'hdeaddead;
-        pB_wb_data_i = 32'hfeedbeef;
+        pA_wb_data_i <= 32'hdeaddead;
+        pB_wb_data_i <= 32'hfeedbeef;
 
         #(CLK_PERIOD * 3);
         assert (pA_wb_data_o == 32'hdeaddead)
@@ -80,25 +82,13 @@ module tb_wishbone();
             $error("pB_wB_data_o Failed: 0x%x != 0x%x", pA_wb_data_o, 32'hfeedbeef);
             $finish();
         end
-        pA_wb_we_i = 12;
-        pB_wb_we_i = 3;
+        pA_wb_we_i <= 12;
+        pB_wb_we_i <= 3;
 
         @(posedge clk);
         // Have both A & B access RAM 1
-        pA_wb_addr_i = 9'b100000011;
-        pB_wb_addr_i = 9'b100000011;
-
-        @(posedge clk);
-        assert (pA_wb_stall_o == 1)
-        else begin
-            $error("pA_wB_stall_o Failed: 0x%x != 0x%x", pA_wb_stall_o, 1);
-            $finish();
-        end
-        assert (pB_wb_stall_o == 0)
-        else begin
-            $error("pB_wB_stall_o Failed: 0x%x != 0x%x", pB_wb_stall_o, 0);
-            $finish();
-        end
+        pA_wb_addr_i <= 9'b100000011;
+        pB_wb_addr_i <= 9'b100000011;
 
         @(posedge clk);
         assert (pA_wb_stall_o == 0)
@@ -112,7 +102,19 @@ module tb_wishbone();
             $finish();
         end
 
-        #(CLK_PERIOD * 2);
+        @(posedge clk);
+        assert (pA_wb_stall_o == 1)
+        else begin
+            $error("pA_wB_stall_o Failed: 0x%x != 0x%x", pA_wb_stall_o, 1);
+            $finish();
+        end
+        assert (pB_wb_stall_o == 0)
+        else begin
+            $error("pB_wB_stall_o Failed: 0x%x != 0x%x", pB_wb_stall_o, 1);
+            $finish();
+        end
+
+        #(CLK_PERIOD * 3);
         assert (pA_wb_data_o == 32'hdeadbeef)
         else begin
             $error("pA_wB_data_o Failed: 0x%x != 0x%x", pA_wb_data_o, 32'hdeadbeef);
@@ -120,10 +122,10 @@ module tb_wishbone();
         end
 
         // Have both A & B access different RAM modules
-        pA_wb_data_i = 32'hfeedfeed;
-        pA_wb_we_i = 15;
-        pA_wb_addr_i = 9'b000000000;
-        pB_wb_addr_i = 9'b100000011;
+        pA_wb_data_i <= 32'hfeedfeed;
+        pA_wb_we_i <= 15;
+        pA_wb_addr_i <= 9'b000000000;
+        pB_wb_addr_i <= 9'b100000011;
 
         #(CLK_PERIOD * 2);
         assert (pA_wb_data_o == 32'hdeaddead)
@@ -139,26 +141,26 @@ module tb_wishbone();
             $finish();
         end
 
-        assert (pB_wb_data_o == 32'hfeedbeef)
+        assert (pB_wb_data_o == 32'hdeadbeef)
         else begin
-            $error("pB_wB_data_o Failed: 0x%x != 0x%x", pB_wb_data_o, 32'hfeedbeef);
+            $error("pB_wB_data_o Failed: 0x%x != 0x%x", pB_wb_data_o, 32'hdeadbeef);
             $finish();
         end
 
         // Set A & B to RAM
-        pA_wb_addr_i = 9'b000110000;
-        pB_wb_addr_i = 9'b000110000;
+        pA_wb_addr_i <= 9'b000110000;
+        pB_wb_addr_i <= 9'b000110000;
 
-        @(posedge clk);
+        // @(posedge clk);
 
-        #(CLK_PERIOD * 2);
+        #(CLK_PERIOD * 3);
         assert (pA_wb_stall_o == 0)
         else begin
             $error("pA_wB_stall_o Failed: 0x%x != 0x%x", pA_wb_stall_o, 0);
             $finish();
         end
-        #(CLK_PERIOD);
 
+        #(CLK_PERIOD);
         assert (pB_wb_data_o[15:0] == 16'hbeef)
         else begin
             $error("pB_wB_data_o Failed: 0x%x != 0x%x", pB_wb_data_o[15:0], 16'hbeef);

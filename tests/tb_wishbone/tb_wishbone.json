@@ -1,15 +1,15 @@
 {
   "extensionVersion": "1.3.4",
   "fileName": "/home/piledriven/cpe470/asic-tools/workspace/lab3-piledriven1/tests/tb_wishbone/tb_wishbone.vcd",
-  "markerTime": 395113,
+  "markerTime": null,
   "altMarkerTime": null,
   "selectedSignal": {
-    "name": "tb_wishbone.pB_wb_we_i",
-    "numberFormat": "binary",
-    "msb": 3,
-    "lsb": 0
+    "name": "tb_wishbone.UUT.conflict",
+    "numberFormat": "hexadecimal",
+    "msb": -1,
+    "lsb": -1
   },
-  "zoomRatio": 0.0023638804778876115,
+  "zoomRatio": 0.004207058823529412,
   "scrollLeft": 0,
   "displayedSignals": [
     {
@@ -61,7 +61,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 35,
+      "netlistId": 37,
       "name": "tb_wishbone.UUT.pA_wb_data_o",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,
@@ -117,7 +117,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 38,
+      "netlistId": 40,
       "name": "tb_wishbone.UUT.pB_wb_data_o",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,
@@ -141,7 +141,15 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 48,
+      "netlistId": 19,
+      "name": "tb_wishbone.UUT.conflict",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "renderType": "binary",
+      "valueLinkCommand": ""
+    },
+    {
+      "netlistId": 50,
       "name": "tb_wishbone.UUT.turn",
       "numberFormat": "binary",
       "colorIndex": 0,
@@ -149,7 +157,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 42,
+      "netlistId": 44,
       "name": "tb_wishbone.UUT.ram0_wb_en0_i",
       "numberFormat": "binary",
       "colorIndex": 0,
@@ -157,7 +165,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 43,
+      "netlistId": 45,
       "name": "tb_wishbone.UUT.ram0_wb_we0_i",
       "numberFormat": "binary",
       "colorIndex": 0,
@@ -165,7 +173,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 41,
+      "netlistId": 43,
       "name": "tb_wishbone.UUT.ram0_wb_a0_i",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,
@@ -173,7 +181,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 40,
+      "netlistId": 42,
       "name": "tb_wishbone.UUT.ram0_wb_Di0_i",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,
@@ -181,7 +189,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 32,
+      "netlistId": 34,
       "name": "tb_wishbone.UUT.ram0_wb_Do0_o",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,
@@ -189,7 +197,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 46,
+      "netlistId": 48,
       "name": "tb_wishbone.UUT.ram1_wb_en0_i",
       "numberFormat": "binary",
       "colorIndex": 0,
@@ -197,7 +205,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 47,
+      "netlistId": 49,
       "name": "tb_wishbone.UUT.ram1_wb_we0_i",
       "numberFormat": "binary",
       "colorIndex": 0,
@@ -205,7 +213,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 45,
+      "netlistId": 47,
       "name": "tb_wishbone.UUT.ram1_wb_a0_i",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,
@@ -213,7 +221,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 44,
+      "netlistId": 46,
       "name": "tb_wishbone.UUT.ram1_wb_Di0_i",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,
@@ -221,7 +229,7 @@
       "valueLinkCommand": ""
     },
     {
-      "netlistId": 31,
+      "netlistId": 33,
       "name": "tb_wishbone.UUT.ram1_wb_Do0_o",
       "numberFormat": "hexadecimal",
       "colorIndex": 0,

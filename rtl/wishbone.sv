@@ -22,13 +22,13 @@ module wishbone #(
     output reg pB_wb_ack_o, pB_wb_stall_o,
     output reg [31:0] pB_wb_data_o
 );
-    logic turn;
+    logic turn, turn_next, conflict;
     logic [3:0] ram0_wb_we0_i, ram1_wb_we0_i;
     logic ram0_wb_en0_i, ram1_wb_en0_i;
     logic [A_WIDTH - 1: 0] ram0_wb_a0_i, ram1_wb_a0_i, ram_addrA, ram_addrB;
     logic [31:0] ram0_wb_Di0_i, ram1_wb_Di0_i;
     logic [31:0] ram0_wb_Do0_o, ram1_wb_Do0_o;
-    logic ram_selA, ram_selB, conflict;
+    logic ram_selA, ram_selB;
 
     assign ram_selA = pA_wb_addr_i[A_WIDTH];
     assign ram_selB = pB_wb_addr_i[A_WIDTH];
@@ -36,6 +36,7 @@ module wishbone #(
     assign ram_addrB = pB_wb_addr_i[A_WIDTH - 1:0];
 
     assign conflict = pA_wb_stb_i && pB_wb_stb_i && (ram_selA == ram_selB);
+    assign turn_next = conflict ? ~turn : 0;
 
     always_comb begin
         // Default values
@@ -58,7 +59,7 @@ module wishbone #(
         else begin
             if(conflict) begin
                 // both pA & pB trying to access same RAM so alternate
-                if(!turn) begin
+                if(turn) begin
                     pA_wb_stall_o = 1;
                     pB_wb_stall_o = 0;
                 end
@@ -114,20 +115,9 @@ module wishbone #(
             pB_wb_ack_o <= 0;
         end
         else begin
-            if(conflict)
-                turn <= ~turn;
-            else
-                turn <= turn;
-            
-            if(pA_wb_stb_i && !pA_wb_stall_o)
-                pA_wb_ack_o <= 1;
-            else
-                pA_wb_ack_o <= 0;
-
-            if(pB_wb_stb_i && !pB_wb_stall_o)
-                pB_wb_ack_o <= 1;
-            else
-                pB_wb_ack_o <= 0;
+            turn <= turn_next;
+            pA_wb_ack_o <= (pA_wb_stb_i && !pA_wb_stall_o) ? 1 : 0;
+            pB_wb_ack_o <= (pB_wb_stb_i && !pB_wb_stall_o) ? 1 : 0;
         end
     end
 
